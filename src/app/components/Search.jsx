@@ -1,11 +1,8 @@
 "use client";
-import { React, useState } from "react";
-import getConcertData from "../api/api";
-import parseData from "../utils/dataParser";
 
-const Search = ({ onClick, setArtistInput, setDateInput }) => {
+const Search = ({ handleSearch, setArtistInput, setDateInput }) => {
   return (
-    <section className="flex-1 bg-green-300">
+    <section className="flex-1">
       <div className="flex flex-col lg:flex-row items-center lg:mx-10">
         <div className="flex flex-col lg:flex-row items-center lg:w-1/2 px-10 py-4">
           <label
@@ -39,7 +36,7 @@ const Search = ({ onClick, setArtistInput, setDateInput }) => {
         </div>
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 my-2 mx-4 lg:mt-0 lg:ml-4 rounded"
-          onClick={onClick}
+          onClick={handleSearch}
         >
           Add
         </button>
