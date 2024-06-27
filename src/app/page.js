@@ -8,7 +8,7 @@ import parseData from "./utils/dataParser";
 export default function Home() {
   // useStates for artist and date input from search
   const [artistInput, setArtistInput] = useState("e.g. Radiohead");
-  const [dateInput, setDateInput] = useState("e.g. 01-08-2018");
+  const [dateInput, setDateInput] = useState("e.g. 01-08-2008");
 
   // list of concert data objects (concertObject)
   const [cards, setCards] = useState([]);
@@ -33,7 +33,7 @@ export default function Home() {
   }, [cards]);
 
   return (
-    <main className="bg-sky-900">
+    <main className="bg-sky-800 min-h-screen">
       <Hero
         handleSearch={handleSearch}
         artistInput={artistInput}
