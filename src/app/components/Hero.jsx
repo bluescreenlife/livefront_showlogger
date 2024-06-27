@@ -12,8 +12,8 @@ const Hero = ({
     <section className="hero flex-1">
       <div className="hero-contents text-center text-neutral-100 pt-20 pb-2">
         <h1 className="hero-title text-6xl font-extrabold">ShowLogger</h1>
-        <p className="text-blue-100 pt-8 pb-4">
-          Concerts make up some of your best memories. Keep track of them.
+        <p className="p-8 mx-4">
+          Concerts make great memories. Keep track of 'em.
         </p>
         <Search
           handleSearch={handleSearch}

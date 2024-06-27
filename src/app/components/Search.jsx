@@ -58,10 +58,10 @@ const Search = ({
           ></input>
         </div>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 lg:mt-0 rounded-full"
+          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-center grow w-full md:w-fit font-bold py-4 px-6 rounded-full"
           onClick={handleSearch}
         >
-          Log
+          Add Show
         </button>
       </div>
     </section>

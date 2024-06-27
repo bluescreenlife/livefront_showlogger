@@ -13,7 +13,7 @@ const Card = ({ data }) => {
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <div
-        className="card-front p-4 h-40 text-stone-800 bg-cyan-400 rounded-lg shadow-lg"
+        className="card-front p-4 h-40 text-stone-800 bg-gradient-to-b from-cyan-500 to-blue-400 rounded-lg shadow-lg"
         onClick={flipCard}
       >
         <span className="font-bold text-lg">{data.artist}</span>
@@ -23,7 +23,7 @@ const Card = ({ data }) => {
         </span>
       </div>
       <div
-        className="card-back h-40 overflow-y-scroll text-stone-100 bg-cyan-700 rounded-lg p-4"
+        className="card-back p-4 h-40 overflow-y-scroll text-stone-100 bg-gradient-to-b from-blue-600 to-cyan-700 rounded-lg"
         onClick={flipCard}
       >
         <span className="font-bold sm:text-sm md:text-base">
