@@ -33,7 +33,7 @@ export default function Home() {
   }, [cards]);
 
   return (
-    <main className="bg-sky-800 min-h-screen">
+    <main className="min-h-screen">
       <Hero
         handleSearch={handleSearch}
         artistInput={artistInput}

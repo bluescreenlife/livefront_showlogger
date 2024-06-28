@@ -38,7 +38,7 @@ const Search = ({
             onFocus={handleArtistFocus}
             onChange={(e) => setArtistInput(e.target.value)}
             id="artist-input"
-            className="block grow w-full text-center p-4 text-gray-900 border border-gray-300 rounded-full bg-gray-50 text-base"
+            className="block grow w-full text-center p-4 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
           ></input>
         </div>
         <div className="date-group flex grow w-full space-x-7 md:space-x-2 flex-row items-center">
@@ -54,11 +54,12 @@ const Search = ({
             onFocus={handleDateFocus}
             onChange={(e) => setDateInput(e.target.value)}
             id="date-input"
-            className="block grow w-full text-center md:w-auto p-4 text-gray-900 border border-gray-300 rounded-full bg-gray-50 text-base"
+            className="block grow w-full text-center md:w-auto p-4 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
           ></input>
         </div>
         <button
-          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-center grow w-full md:w-fit font-bold py-4 px-6 rounded-full"
+          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white 
+          text-center justify-center text-nowrap grow w-full md:w-fit font-bold py-4 px-6 rounded-full"
           onClick={handleSearch}
         >
           Add Show
