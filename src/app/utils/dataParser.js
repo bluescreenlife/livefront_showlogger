@@ -1,20 +1,23 @@
+import moment from "moment";
+import concertObject from "./concertObject";
+
 const parseData = (concertData) => {
   const concertDetail = concertData.setlist[0];
 
   console.log("Attempting to parse data: ", concertDetail);
 
-  const concertObject = {
-    added: new Date().toISOString(),
+  // create new object from concertObject class
+  const concert = new concertObject({
     artist: concertDetail.artist.name,
-    date: concertDetail.eventDate,
+    date: moment(concertDetail.eventDate, "DD-MM-YYYY").format("MMMM Do, YYYY"),
     city: concertDetail.venue.city.name,
     venue: concertDetail.venue.name,
     url: concertDetail.url,
     setlist: concertDetail.sets.set[0]?.song.map((song) => song.name) ?? null,
-  };
+  });
 
-  console.log("Created concertObject: ", concertObject);
-  return concertObject;
+  console.log("Created concertObject: ", concert);
+  return concert;
 };
 
 export default parseData;

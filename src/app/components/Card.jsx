@@ -13,17 +13,22 @@ const Card = ({ data }) => {
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <div
-        className="card-front p-4 h-40 text-stone-800 bg-gradient-to-b from-cyan-500 to-blue-400 rounded-lg shadow-lg"
+        className="card-front p-4 h-32 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg  "
         onClick={flipCard}
       >
-        <span className="font-bold text-lg">{data.artist}</span>
-        <span className="block text-md">{data.date}</span>
-        <span className="block text-md">
-          {data.venue}, {data.city}{" "}
+        <span className="concert-info">
+          <span className="font-bold text-lg">{data.artist}</span>
+          <span className="block text-md">{data.date}</span>
+          <span className="block text-sm text-nowrap">
+            {data.venue}, {data.city}{" "}
+          </span>
         </span>
+        <p className="flip-notice text-sm text-right mr-2 text-purple-400">
+          tap to flip
+        </p>
       </div>
       <div
-        className="card-back p-4 h-40 overflow-y-scroll text-stone-100 bg-gradient-to-b from-blue-600 to-cyan-700 rounded-lg"
+        className="card-back p-4 h-full md:h-32 overflow-y-scroll text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg"
         onClick={flipCard}
       >
         <span className="font-bold sm:text-sm md:text-base">

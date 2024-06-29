@@ -16,7 +16,7 @@ const Search = ({
   };
 
   const handleDateFocus = (e) => {
-    if (e.target.value === "e.g. 01-08-2008") {
+    if (e.target.value === "e.g. 08/01/2008") {
       setDateInput("");
       e.target.value = "";
     }
@@ -26,12 +26,9 @@ const Search = ({
     <section className="search-container flex-1 items-center">
       <div className="lbl-btn-container flex flex-col md:flex-row grow space-y-4 md:space-y-0 md:space-x-4 items-center mt-2 mx-10">
         <div className="artist-group flex flex-row grow w-full space-x-2 items-center">
-          <label
-            htmlFor="artist-input"
-            className="block mb-2 text-sm font-medium"
-          >
-            <h3 className="text-xl text-nowrap">I saw:</h3>
-          </label>
+          <span className="absolute translate-x-8 md:translate-x-10 text-md md:text-lg text-gray-800 z-10">
+            I saw:
+          </span>
           <input
             type="text"
             value={artistInput}
@@ -41,13 +38,10 @@ const Search = ({
             className="block grow w-full text-center p-4 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
           ></input>
         </div>
-        <div className="date-group flex grow w-full space-x-7 md:space-x-2 flex-row items-center">
-          <label
-            htmlFor="date-input"
-            className="block lg:inline-block mb-2 lg:mb-0 lg:mr-2 text-sm font-medium"
-          >
-            <h3 className="text-xl">On:</h3>
-          </label>
+        <div className="date-group flex flex-row grow w-full space-x-2 items-center">
+          <span className="absolute translate-x-8 md:translate-x-10 text-md md:text-lg text-gray-800 z-10">
+            On:
+          </span>
           <input
             type="text"
             value={dateInput}
@@ -58,8 +52,8 @@ const Search = ({
           ></input>
         </div>
         <button
-          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white 
-          text-center justify-center text-nowrap grow w-full md:w-fit font-bold py-4 px-6 rounded-full"
+          className="hover:-translate-y-1 duration-300 bg-gradient-to-r from-sky-500 to-indigo-500 text-white 
+          text-center justify-center text-nowrap grow w-full md:w-fit font-bold py-4 p-6 rounded-full"
           onClick={handleSearch}
         >
           Add Show

@@ -8,7 +8,7 @@ import parseData from "./utils/dataParser";
 export default function Home() {
   // useStates for artist and date input from search
   const [artistInput, setArtistInput] = useState("e.g. Radiohead");
-  const [dateInput, setDateInput] = useState("e.g. 01-08-2008");
+  const [dateInput, setDateInput] = useState("e.g. 08/01/2008");
 
   // list of concert data objects (concertObject)
   const [cards, setCards] = useState([]);
@@ -17,6 +17,7 @@ export default function Home() {
   // Card component - async as needs to wait for promise to finish and return JSON object
   const handleSearch = async () => {
     try {
+      console.log("Attempting search for", artistInput, "on", dateInput, "...");
       const concertData = await getConcertData(artistInput, dateInput);
       const cardObject = parseData(concertData);
       setCards((prevCards) => [cardObject, ...prevCards]);
@@ -29,11 +30,11 @@ export default function Home() {
 
   // log each addition of cardObject
   useEffect(() => {
-    console.log(cards); // Log cards whenever it changes
+    console.log("Cards change detected. Current state:", cards); // Log cards whenever it changes
   }, [cards]);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-neutral-900">
       <Hero
         handleSearch={handleSearch}
         artistInput={artistInput}
@@ -41,7 +42,14 @@ export default function Home() {
         dateInput={dateInput}
         setDateInput={setDateInput}
       />
-      <Grid cardList={cards} />
+      <Grid
+        cardList={cards}
+        handleSearch={handleSearch}
+        artistInput={artistInput}
+        setArtistInput={setArtistInput}
+        dateInput={dateInput}
+        setDateInput={setDateInput}
+      />
     </main>
   );
 }
