@@ -19,9 +19,14 @@ const Hero = ({
         <h1 className="hero-title text-5xl md:text-6xl font-extrabold drop-shadow-2xl">
           ShowLogger
         </h1>
-        <p className="p-8 mx-4 drop-shadow-2xl">
-          Concerts make great memories. Don't you forget about them.
-        </p>
+        <div className="copy-text grid grid-cols-1 md:grid-cols-2 md:space-x-1 p-8 mx-4 drop-shadow-2xl">
+          <span className="col-span-1 md:text-right">
+            Concerts make great memories.
+          </span>
+          <span className="col-span-1 md:text-left">
+            Don't you forget about them.
+          </span>
+        </div>
         <Search
           handleSearch={handleSearch}
           artistInput={artistInput}

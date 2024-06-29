@@ -55,15 +55,15 @@ const Grid = ({
   };
 
   return (
-    <section className="min-h-screen">
+    <section className="card-container">
       {cardList && cardList.length > 0 ? (
-        <div className="cardContainer min-h-screen md:min-h-fit mx-4 p-6 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-y-auto max-h-[32rem] md:max-h-[28rem]">
+        <div className="card-grid mx-4 p-6 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-y-auto max-h-[75vh]">
           {cardList.map((concert, index) => (
             <Card key={index} data={concert} />
           ))}
         </div>
       ) : (
-        <div className="default-text-container text-center mt-14">
+        <div className="default-text-container text-center text-stone-100 mt-14">
           <p className="">No concerts logged yet.</p>
           <p className="">
             Add one above, or&nbsp;

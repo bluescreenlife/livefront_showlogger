@@ -6,6 +6,11 @@ export default {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
       },
+      colors: {
+        "header-pink": "#6b255e",
+        "header-green": "#45984f",
+        "header-blue": "#283bc4",
+      },
     },
   },
   plugins: [],
