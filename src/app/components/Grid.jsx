@@ -1,5 +1,6 @@
 import Card from "./Card";
 import { useState, useEffect } from "react";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Grid = ({
   cardList,
@@ -57,8 +58,8 @@ const Grid = ({
     <section className="min-h-screen">
       {cardList && cardList.length > 0 ? (
         <div className="cardContainer min-h-screen md:min-h-fit mx-4 p-6 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-y-auto max-h-[32rem] md:max-h-[28rem]">
-          {cardList.map((concert) => (
-            <Card key={concert.added} data={concert} />
+          {cardList.map((concert, index) => (
+            <Card key={index} data={concert} />
           ))}
         </div>
       ) : (

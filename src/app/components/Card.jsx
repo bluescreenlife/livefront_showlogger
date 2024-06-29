@@ -12,6 +12,7 @@ const Card = ({ data }) => {
 
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
+      {/* card front */}
       <div
         className="card-front p-4 h-32 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg  "
         onClick={flipCard}
@@ -27,22 +28,25 @@ const Card = ({ data }) => {
           tap to flip
         </p>
       </div>
+      {/* card back */}
       <div
-        className="card-back p-4 h-full md:h-32 overflow-y-scroll text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg"
+        className="card-back p-4 h-full md:h-fit text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg"
         onClick={flipCard}
       >
-        <span className="font-bold sm:text-sm md:text-base">
-          {data.artist}: Setlist
-        </span>
-        <span className="block sm:text-sm md:text-base">
-          {data.setlist
-            ? data.setlist.map((song, index) => (
-                <span key={index} className="block">
-                  {index + 1}. {song}
-                </span>
-              ))
-            : "Setlist unavailable."}
-        </span>
+        <div className="setlist-container">
+          <span className="setlist-title font-bold sm:text-sm md:text-base">
+            {data.artist}: Setlist
+          </span>
+          <span className="setlist-text block text-sm h-24 overflow-y-scroll">
+            {data.setlist
+              ? data.setlist.map((song, index) => (
+                  <span key={index} className="block">
+                    {index + 1}. {song}
+                  </span>
+                ))
+              : "Setlist unavailable."}
+          </span>
+        </div>
       </div>
     </ReactCardFlip>
   );
