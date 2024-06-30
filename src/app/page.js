@@ -7,8 +7,8 @@ import parseData from "./utils/dataParser";
 
 export default function Home() {
   // useStates for artist and date input from search
-  const [artistInput, setArtistInput] = useState("e.g. Radiohead");
-  const [dateInput, setDateInput] = useState("e.g. 08/01/2008");
+  const [artistInput, setArtistInput] = useState("");
+  const [dateInput, setDateInput] = useState("");
 
   // list of concert data objects (concertObject)
   const [cards, setCards] = useState([]);
