@@ -23,6 +23,8 @@ const Grid = ({
     ["Modest Mouse", "06/20/2024"],
     ["Arcade Fire", "03/08/2014"],
     ["Queens of the Stone Age", "10/14/2017"],
+    ["Pinback", "09-20-2014"],
+    ["Foxing", "08-11-2015"],
   ];
 
   // triggered by loadSampleData function - update artist and date hooks
@@ -71,7 +73,7 @@ const Grid = ({
               className="underline text-purple-400"
               onClick={loadSampleData}
             >
-              load some examples.
+              load 10 examples.
             </button>
           </p>
         </div>
