@@ -24,8 +24,12 @@ export default function Home() {
       setArtistInput("");
       setDateInput("");
     } catch (error) {
-      console.log("Error processing search data:", error);
+      console.error("Error processing search data:", error);
     }
+  };
+
+  const handleDelete = (id) => {
+    setCards(cards.filter((card) => card.id !== id));
   };
 
   // log each addition of cardObject
@@ -43,12 +47,14 @@ export default function Home() {
         setDateInput={setDateInput}
       />
       <Grid
-        cardList={cards}
+        cards={cards}
+        setCards={setCards}
         handleSearch={handleSearch}
         artistInput={artistInput}
         setArtistInput={setArtistInput}
         dateInput={dateInput}
         setDateInput={setDateInput}
+        handleDelete={handleDelete}
       />
     </main>
   );
