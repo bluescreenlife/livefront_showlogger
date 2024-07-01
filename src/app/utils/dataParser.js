@@ -8,6 +8,7 @@ const parseData = (concertData) => {
 
   // create new object from concertObject class
   const concert = new concertObject({
+    id: concertDetail.id,
     artist: concertDetail.artist.name,
     date: moment(concertDetail.eventDate, "DD-MM-YYYY").format("MMMM Do, YYYY"),
     city: concertDetail.venue.city.name,
