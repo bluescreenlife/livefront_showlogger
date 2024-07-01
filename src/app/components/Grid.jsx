@@ -1,14 +1,14 @@
 import Card from "./Card";
 import { useState, useEffect } from "react";
-import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Grid = ({
-  cardList,
+  cards,
   artistInput,
   setArtistInput,
   dateInput,
   setDateInput,
   handleSearch,
+  handleDelete,
 }) => {
   // hooks for monitoring trigger of sampleConcerts load-in
   const [loadingSamples, setLoadingSamples] = useState(false);
@@ -19,12 +19,12 @@ const Grid = ({
     ["LCD Soundsystem", "05/22/2024"],
     ["The Cure", "06/08/2023"],
     ["David Byrne", "05/18/2018"],
-    ["Good Charlotte", "07/06/2003"],
     ["Modest Mouse", "06/20/2024"],
+    ["Bon Iver", "07-18-2015"],
     ["Arcade Fire", "03/08/2014"],
     ["Queens of the Stone Age", "10/14/2017"],
-    ["Pinback", "09-20-2014"],
-    ["Foxing", "08-11-2015"],
+    ["Third Eye Blind", "06-28-2015"],
+    ["American Football", "10-29-2016"],
   ];
 
   // triggered by loadSampleData function - update artist and date hooks
@@ -45,7 +45,7 @@ const Grid = ({
         handleSearch().then(() => {
           setTimeout(() => {
             setSampleIndex((prevIndex) => prevIndex + 1);
-          }, 1500); // 1.5-second delay between each API call
+          }, 1500); // 1.5-second delay between each API call to prevent rate limit error
         });
       }
     }
@@ -58,10 +58,10 @@ const Grid = ({
 
   return (
     <section className="card-container">
-      {cardList && cardList.length > 0 ? (
+      {cards && cards.length > 0 ? (
         <div className="card-grid mx-4 p-6 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-y-auto max-h-[75vh]">
-          {cardList.map((concert, index) => (
-            <Card key={index} data={concert} />
+          {cards.map((concert) => (
+            <Card key={concert.id} data={concert} handleDelete={handleDelete} />
           ))}
         </div>
       ) : (
