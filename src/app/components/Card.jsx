@@ -1,16 +1,20 @@
 import React from "react";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
-import { RiFlipVerticalFill } from "react-icons/ri";
 import { IoTrashBinOutline } from "react-icons/io5";
 
-const Card = ({ data }) => {
+const Card = ({ data, handleDelete }) => {
   // useState and function for flipping cards on tap/click
   const [isFlipped, setIsFlipped] = useState(false);
 
   function flipCard() {
     setIsFlipped(!isFlipped);
   }
+
+  const handleDeleteClick = (e) => {
+    e.stopPropagation(); // Prevents the flipCard function from being called
+    handleDelete(data.id);
+  };
 
   return (
     <ReactCardFlip
@@ -39,7 +43,7 @@ const Card = ({ data }) => {
           <button className="flex w-full" onClick={flipCard}>
             <div className="setlist-container h-full md:h-40 flex-grow text-left p-4 font-DMsans">
               <span className="setlist-title font-bold sm:text-sm md:h-1/5 md:text-base">
-                {data.artist}: Setlist
+                Setlist
               </span>
               <span className="setlist-text block text-sm md:h-4/5 md:overflow-y-scroll">
                 {data.setlist
@@ -54,7 +58,7 @@ const Card = ({ data }) => {
           </button>
         </div>
         <div className="button-container flex w-1/5">
-          <button className="p-6">
+          <button className="p-6" onClick={handleDeleteClick}>
             <IoTrashBinOutline />
           </button>
         </div>
