@@ -1,5 +1,6 @@
 class concertObject {
   constructor({
+    id = "",
     artist = "",
     date = "",
     city = "",
@@ -7,6 +8,7 @@ class concertObject {
     url = "",
     setlist = [],
   }) {
+    this.id = id;
     this.added = new Date().toISOString();
     this.artist = artist;
     this.date = date;
