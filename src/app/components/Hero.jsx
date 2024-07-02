@@ -23,7 +23,7 @@ const Hero = ({
             Concerts make great memories.
           </span>
           <span className="col-span-1 md:text-left">
-            Don&apos;t you forget about them.
+            Don&apos;t &#40;you&#41; forget about them.
           </span>
         </div>
         <Search
