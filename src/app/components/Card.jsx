@@ -25,7 +25,7 @@ const Card = ({ data, handleDelete }) => {
     >
       {/* card front */}
       <div
-        className="card-front flex flex-col divide-y-2 divide-dotted divide-purple-500 h-40 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg hover:-translate-y-1 duration-300 "
+        className="card-front flex flex-col divide-y-2 divide-dotted divide-purple-500 h-40 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg md:hover:-translate-y-1 md:duration-300 "
         onClick={flipCard}
       >
         <span className="concert-info h-2/3 my-4 px-4 font-DMsans">
@@ -37,7 +37,7 @@ const Card = ({ data, handleDelete }) => {
         </span>
       </div>
       {/* card back */}
-      <div className="card-back flex flex-row cols-2 text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg hover:-translate-y-1 duration-300">
+      <div className="card-back flex flex-row cols-2 text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg md:hover:-translate-y-1 md:duration-300">
         <div className="flex-parent w-4/5">
           <button className="flex w-full" onClick={flipCard}>
             <div className="setlist-container h-full md:h-40 flex-grow text-left p-4 font-DMsans">
