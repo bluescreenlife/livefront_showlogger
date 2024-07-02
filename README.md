@@ -60,6 +60,7 @@ After starting the development server, the app will be available at `http://loca
 The following considerations were made during development:
 
 - **Client-side Rendering:** To utilize hooks across multiple components, the entire site is rendered on the client side. This decision was made for simplicity and ease of state management, though it has implications for performance and SEO.
+- **API requests routed through proxy server** Due to CORS policy on the Setlist.fm API (only same-origin requests from client) a proxy server was used to route requests through a server component.
 - **Limited search input options:** To keep the first iteration of the app simple and bug-free, the user is required to enter the date they saw the artist. More than likely, the user won't remember the date off-hand and will have to look it up. Ideally, the user would enter the concert city, location, year, or a combination of these instead of the date, and a list of possible concerts would render in a drop-down selection.
 
 ## Future Improvements
@@ -74,6 +75,12 @@ The following is a list of improvements and feature additions for the future:
 ## Contributing
 
 Contributions are welcome and appreciated.
+
+Contribution guidelines:
+
+1. Main branch: as of now, when a feature is added to main, console logs are commented out, and console errors are left in.
+
+Getting started:
 
 1. Fork the project.
 2. Create your Feature Branch:
