@@ -11,7 +11,7 @@ export async function GET(request) {
   const eventDate = searchParams.get("eventDate");
 
   const encodedArtistName = encodeURIComponent(artistName);
-  const API_KEY = "HStiJOTNJ-160cBLXDtq05gBYK6rTKJtNJ28"; // need to import from environment file
+  const API_KEY = process.env.REACT_APP_SETLIST_FM_KEY;
   const API_URL = `https://api.setlist.fm/rest/1.0/search/setlists?artistName=${encodedArtistName}&date=${eventDate}&p=1`;
 
   const headers = {
