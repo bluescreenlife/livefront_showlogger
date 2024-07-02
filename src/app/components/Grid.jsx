@@ -16,15 +16,15 @@ const Grid = ({
 
   const sampleConcerts = [
     ["Radiohead", "08/01/2008"],
-    ["LCD Soundsystem", "05/22/2024"],
-    ["The Cure", "06/08/2023"],
-    ["David Byrne", "05/18/2018"],
-    ["Modest Mouse", "06/20/2024"],
-    ["Bon Iver", "07-18-2015"],
     ["Arcade Fire", "03/08/2014"],
+    ["Third Eye Blind", "06/28/2015"],
+    ["Bon Iver", "07/18/2015"],
     ["Queens of the Stone Age", "10/14/2017"],
-    ["Third Eye Blind", "06-28-2015"],
-    ["American Football", "10-29-2016"],
+    ["David Byrne", "05/18/2018"],
+    ["The Cure", "06/08/2023"],
+    ["Descendents", "06/16/2023"],
+    ["LCD Soundsystem", "05/22/2024"],
+    ["Modest Mouse", "06/20/2024"],
   ];
 
   // triggered by loadSampleData function - update artist and date hooks
