@@ -4,7 +4,7 @@ import concertObject from "./concertObject";
 const parseData = (concertData) => {
   const concertDetail = concertData.setlist[0];
 
-  console.log("Attempting to parse data: ", concertDetail);
+  // console.log("Attempting to parse data: ", concertDetail);
 
   // create new object from concertObject class
   const concert = new concertObject({
@@ -17,7 +17,7 @@ const parseData = (concertData) => {
     setlist: concertDetail.sets.set[0]?.song.map((song) => song.name) ?? null,
   });
 
-  console.log("Created concertObject: ", concert);
+  // console.log("Created concertObject: ", concert);
   return concert;
 };
 
