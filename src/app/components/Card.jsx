@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { IoTrashBinOutline } from "react-icons/io5";
