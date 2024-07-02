@@ -1,4 +1,4 @@
-"use client";
+import React, { useRef } from "react";
 
 const Search = ({
   handleSearch,
@@ -7,6 +7,21 @@ const Search = ({
   dateInput,
   setDateInput,
 }) => {
+  const artistInputRef = useRef(null);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleDateKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+      artistInputRef.current.focus(); // return focus to the artist box
+    }
+  };
+
   return (
     <section className="search-container flex-1 items-center">
       <div className="lbl-btn-container flex flex-col md:flex-row grow space-y-4 md:space-y-0 md:space-x-4 items-center mt-2 mx-10">
@@ -19,6 +34,8 @@ const Search = ({
             value={artistInput}
             placeholder="Radiohead"
             onChange={(e) => setArtistInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            ref={artistInputRef}
             id="artist-input"
             className="block grow w-full text-left py-4 pl-24 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
           ></input>
@@ -32,6 +49,7 @@ const Search = ({
             value={dateInput}
             placeholder="08/01/2008"
             onChange={(e) => setDateInput(e.target.value)}
+            onKeyDown={handleDateKeyDown}
             id="date-input"
             className="block grow w-full text-left md:w-auto py-4 pl-20 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
           ></input>
