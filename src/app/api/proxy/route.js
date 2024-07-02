@@ -26,7 +26,7 @@ export async function GET(request) {
     console.error(`Error fetching concert data: ${error}`);
     return NextResponse.json(
       { error: error.message },
-      { status: error.response?.status || 500 }
+      { status: error.response?.status || 500 },
     );
   }
 }
