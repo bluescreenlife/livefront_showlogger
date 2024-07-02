@@ -17,7 +17,7 @@ export default function Home() {
   // Card component - async as needs to wait for promise to finish and return JSON object
   const handleSearch = async () => {
     try {
-      console.log("Attempting search for", artistInput, "on", dateInput, "...");
+      // console.log("Attempting search for", artistInput, "on", dateInput, "...");
       const concertData = await getConcertData(artistInput, dateInput);
       const cardObject = parseData(concertData);
       setCards((prevCards) => [cardObject, ...prevCards]);
