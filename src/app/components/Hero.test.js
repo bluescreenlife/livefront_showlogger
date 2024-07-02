@@ -10,15 +10,15 @@ describe("Hero", () => {
         setArtistInput={jest.fn()}
         dateInput=""
         setDateInput={jest.fn()}
-      />
+      />,
     );
 
     expect(screen.getByText("ShowLogger")).toBeInTheDocument();
     expect(
-      screen.getByText("Concerts make great memories.")
+      screen.getByText("Concerts make great memories."),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Don't you forget about them.")
+      screen.getByText("Don't (you) forget about them."),
     ).toBeInTheDocument();
   });
 
@@ -31,7 +31,7 @@ describe("Hero", () => {
         setArtistInput={jest.fn()}
         dateInput=""
         setDateInput={jest.fn()}
-      />
+      />,
     );
 
     fireEvent.click(screen.getByText("Add Show"));

@@ -10,7 +10,7 @@ describe("Search", () => {
         setArtistInput={jest.fn()}
         dateInput=""
         setDateInput={jest.fn()}
-      />
+      />,
     );
 
     expect(screen.getByPlaceholderText("Radiohead")).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe("Search", () => {
         setArtistInput={setArtistInput}
         dateInput=""
         setDateInput={setDateInput}
-      />
+      />,
     );
 
     fireEvent.change(screen.getByPlaceholderText("Radiohead"), {
