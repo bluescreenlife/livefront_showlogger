@@ -32,10 +32,10 @@ export default function Home() {
     setCards(cards.filter((card) => card.id !== id));
   };
 
-  // log each addition of cardObject
-  useEffect(() => {
-    console.log("Cards change detected. Current state:", cards); // Log cards whenever it changes
-  }, [cards]);
+  // log cardObject changes
+  // useEffect(() => {
+  //   console.log("Cards change detected. Current state:", cards);
+  // }, [cards]);
 
   return (
     <main className="min-h-screen bg-neutral-900">
