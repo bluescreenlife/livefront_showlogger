@@ -10,8 +10,9 @@ const Card = ({ data, handleDelete }) => {
     setIsFlipped(!isFlipped);
   }
 
+  // card flip needs disabling before deletion due to concurrent event handling error
   const handleDeleteClick = (e) => {
-    e.stopPropagation(); // Prevents the flipCard function from being called
+    e.stopPropagation();
     handleDelete(data.id);
   };
 
@@ -25,21 +26,24 @@ const Card = ({ data, handleDelete }) => {
     >
       {/* card front */}
       <div
-        className="card-front flex flex-col divide-y-2 divide-dotted divide-purple-500 h-40 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg md:hover:-translate-y-1 md:duration-300 "
+        className="card-front flex flex-col divide-purple-500 h-40 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg md:hover:-translate-y-1 md:duration-300 "
         onClick={flipCard}
       >
-        <span className="concert-info h-2/3 my-4 px-4 font-DMsans">
-          <span className="font-bold text-lg">{data.artist}</span>
-          <span className="block text-md">{data.date}</span>
-          <span className="block text-sm italic text-nowrap">
+        <span className="concert-details h-2/3 my-4 px-4 font-DMsans">
+          <span className="artist-name font-bold text-lg">{data.artist}</span>
+          <span className="concert-date block text-md">{data.date}</span>
+          <span className="concert-location block text-sm italic text-nowrap">
             {data.venue}, {data.city}{" "}
           </span>
+        </span>
+        <span className="flip-notice text-sm text-center pb-2 text-purple-400">
+          tap to flip
         </span>
       </div>
       {/* card back */}
       <div className="card-back flex flex-row cols-2 text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg md:hover:-translate-y-1 md:duration-300">
         <div className="flex-parent w-4/5">
-          <button className="flex w-full" onClick={flipCard}>
+          <button className="flip-button flex w-full" onClick={flipCard}>
             <div className="setlist-container h-full md:h-40 flex-grow text-left p-4 font-DMsans">
               <span className="setlist-title font-bold sm:text-sm md:h-1/5 md:text-base">
                 Setlist
@@ -56,8 +60,8 @@ const Card = ({ data, handleDelete }) => {
             </div>
           </button>
         </div>
-        <div className="button-container flex w-1/5">
-          <button className="p-6" onClick={handleDeleteClick}>
+        <div className="del-button-container flex w-1/5">
+          <button className="delete-button p-6" onClick={handleDeleteClick}>
             <IoTrashBinOutline />
           </button>
         </div>
