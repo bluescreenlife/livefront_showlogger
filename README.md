@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ShowLogger: a concert folio for music lovers
 
-## Getting Started
+## Description
 
-First, run the development server:
+This project is a front-end for a web application built with Next.js and React. Using the Setlist.fm API, it allows the user to look up past concerts and render a collection of card elements with a front side displaying general concert information, and a back side displaying the setlist from each concert. Tap or click on a generated card to flip between sides.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Considerations](#considerations)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [License](#license)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To view the live demo: [visit ShowLogger.net](http://www.showlogger.net)
 
-## Learn More
+To get a local development copy running:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/bluescreenlife/livefront_showlogger
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navigate to the project directory:
 
-## Deploy on Vercel
+   ```bash
+   cd livefront-showlogger
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. View in browser:
+
+After starting the development server, the app will be available at `http://localhost:3000`.
+
+## Usage
+
+1. To add a concert, enter an artist name and date (formatted as MM/DD/YYYY) in the search fields and click/tap Add Show, or press return.
+   - Alternatively, load a set of 10 pre-set concerts by clicking the "load 10 examples" link below.
+2. Click/tap the front of a concert card to flip to the back and view the setlist (scrollable on screens larger than mobile).
+3. Click/tap the back of the card, outside of the delete icon, to flip back to the front.
+4. To delete a concert card, click/tap the delete icon on the back.
+
+## Considerations
+
+The following considerations were made during development:
+
+- **Client-side Rendering:** To utilize hooks across multiple components, the entire site is rendered on the client side. This decision was made for simplicity and ease of state management, though it has implications for performance and SEO.
+- **Limited search input options:** To keep the first iteration of the app simple and bug-free, the user is required to enter the date they saw the artist. More than likely, the user won't remember the date off-hand and will have to look it up. Ideally, the user would enter the concert city, location, year, or a combination of these instead of the date, and a list of possible concerts would render in a drop-down selection.
+
+## Future Improvements
+
+The following is a list of improvements and feature additions for the future:
+
+- Improve card-flip animation on mobile: Currently, occasional artifacts are shown when flipping or scrolling concert cards (tested on Safari).
+- Add clear communication of the flippable nature of concert cards while maintaining the minimal UI, such as having the card flip upon being rendered in the DOM.
+- On desktop, if the user has scrollbars always-on in their device settings or is using Firefox with default settings, the look of the card back is distrupted by scroll bars on screens larger than mobile. A redesign with either the setlist right-aligned or displayed in a non-scrolling manner would be a notable visual improvement.
+- Add user account features and concert card data storage.
+
+## Contributing
+
+Contributions are welcome and appreciated.
+
+1. Fork the project.
+2. Create your Feature Branch:
+
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+
+4. Push to the branch:
+
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+
+5. Open a Pull Request.
+
+## License
+
+Distributed under the MIT license.
