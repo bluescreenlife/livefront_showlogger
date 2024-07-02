@@ -81,7 +81,9 @@ Contributions are welcome and appreciated.
 
 Contribution guidelines:
 
-1. Main branch: as of now, when a feature is added to main, console logs are commented out, and console errors are left in.
+- Main branch: as of now, when a feature is added to main, console logs are commented out, and console errors are left in.
+- Tailwind with an extension for Prettier is used for CSS and Tailwind selector organization: 'npm run format' will organize the selectors.
+- Aria attributes and general accessibility helpers (i.e. labels, tab indices, onkeydown listeners) are included for screenreaders and should be maintained with addition of new features and components.
 
 Getting started:
 
