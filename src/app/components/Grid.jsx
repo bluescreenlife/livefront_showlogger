@@ -36,8 +36,8 @@ const Grid = ({
     }
   }, [loadingSamples, sampleIndex]);
 
-  // triggered by artist and date change - ensure values are loaded and then trigger search
-  // after search, increase index, triggering the next sampleConcert search
+  /* sample loader: watches for by artist and date change: ensures values are present in input 
+  fields, triggers search, increases index, triggering the next sampleConcert search */
   useEffect(() => {
     if (loadingSamples && sampleIndex < sampleConcerts.length) {
       const [artist, date] = sampleConcerts[sampleIndex];
@@ -57,21 +57,26 @@ const Grid = ({
   };
 
   return (
-    <section className="card-container">
+    <section
+      className="card-container"
+      aria-live="polite"
+      aria-relevant="additions removals"
+    >
       {cards && cards.length > 0 ? (
-        <div className="card-grid mx-4 p-6 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-y-auto max-h-[75vh]">
+        <div className="card-grid mx-4 grid max-h-[75vh] grid-cols-1 gap-5 overflow-y-auto p-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((concert) => (
             <Card key={concert.id} data={concert} handleDelete={handleDelete} />
           ))}
         </div>
       ) : (
-        <div className="default-text-container text-center text-stone-100 mt-14">
-          <p className="">No concerts logged yet.</p>
-          <p className="">
+        <div className="default-text-container mt-14 text-center text-stone-100">
+          <p>No concerts logged yet.</p>
+          <p>
             Add one above, or&nbsp;
             <button
-              className="underline text-purple-400"
+              className="text-purple-400 underline"
               onClick={loadSampleData}
+              aria-label="Load 10 example concerts"
             >
               load 10 examples.
             </button>

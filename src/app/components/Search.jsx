@@ -24,11 +24,14 @@ const Search = ({
 
   return (
     <section className="search-container flex-1 items-center">
-      <div className="lbl-btn-container flex flex-col md:flex-row grow space-y-4 md:space-y-0 md:space-x-4 items-center mt-2 mx-10">
-        <div className="artist-group flex flex-row grow w-full space-x-2 items-center">
-          <span className="absolute translate-x-8 md:translate-x-10 text-md md:text-lg text-gray-800 z-10">
+      <div className="lbl-btn-container mx-10 mt-2 flex grow flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+        <div className="artist-group flex w-full grow flex-row items-center space-x-2">
+          <label
+            htmlFor="artist-input"
+            className="text-md absolute z-10 translate-x-8 text-gray-800 md:translate-x-10 md:text-lg"
+          >
             I saw:
-          </span>
+          </label>
           <input
             type="text"
             value={artistInput}
@@ -37,13 +40,17 @@ const Search = ({
             onKeyDown={handleKeyDown}
             ref={artistInputRef}
             id="artist-input"
-            className="block grow w-full text-left py-4 pl-24 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
+            className="block w-full grow rounded-full border border-gray-300 bg-gray-50 py-4 pl-24 text-left text-base text-gray-900 opacity-80"
+            aria-label="Artist"
           ></input>
         </div>
-        <div className="date-group flex flex-row grow w-full space-x-2 items-center">
-          <span className="absolute translate-x-8 md:translate-x-10 text-md md:text-lg text-gray-800 z-10">
+        <div className="date-group flex w-full grow flex-row items-center space-x-2">
+          <label
+            htmlFor="date-input"
+            className="text-md absolute z-10 translate-x-8 text-gray-800 md:translate-x-10 md:text-lg"
+          >
             On:
-          </span>
+          </label>
           <input
             type="text"
             value={dateInput}
@@ -51,13 +58,14 @@ const Search = ({
             onChange={(e) => setDateInput(e.target.value)}
             onKeyDown={handleDateKeyDown}
             id="date-input"
-            className="block grow w-full text-left md:w-auto py-4 pl-20 text-gray-900 border border-gray-300 rounded-full bg-gray-50 opacity-80 text-base"
+            className="block w-full grow rounded-full border border-gray-300 bg-gray-50 py-4 pl-20 text-left text-base text-gray-900 opacity-80 md:w-auto"
+            aria-label="Date"
           ></input>
         </div>
         <button
-          className="hover:-translate-y-1 duration-300 bg-gradient-to-r from-sky-500 to-indigo-500 text-white 
-          text-center justify-center text-nowrap grow w-full md:w-fit font-bold py-4 p-6 rounded-full"
+          className="w-full grow justify-center text-nowrap rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 p-6 py-4 text-center font-bold text-white duration-300 hover:-translate-y-1 md:w-fit"
           onClick={handleSearch}
+          aria-label="Add Show"
         >
           Add Show
         </button>

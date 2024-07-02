@@ -26,25 +26,39 @@ const Card = ({ data, handleDelete }) => {
     >
       {/* card front */}
       <div
-        className="card-front flex flex-col divide-purple-500 h-40 text-stone-100 bg-gradient-to-b from-blue-800 to-purple-600 rounded-lg md:hover:-translate-y-1 md:duration-300 "
+        className="card-front flex h-40 flex-col divide-purple-500 rounded-lg bg-gradient-to-b from-blue-800 to-purple-600 text-stone-100 md:duration-300 md:hover:-translate-y-1"
         onClick={flipCard}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === "Enter" && flipCard()}
+        aria-label={`Concert details for ${data.artist} on ${data.date}`}
       >
-        <span className="concert-details h-2/3 my-4 px-4 font-DMsans">
-          <span className="artist-name font-bold text-lg">{data.artist}</span>
-          <span className="concert-date block text-md">{data.date}</span>
-          <span className="concert-location block text-sm italic text-nowrap">
+        <span className="concert-details my-4 h-2/3 px-4 font-DMsans">
+          <span className="artist-name text-lg font-bold">{data.artist}</span>
+          <span className="concert-date text-md block">{data.date}</span>
+          <span className="concert-location block text-nowrap text-sm italic">
             {data.venue}, {data.city}{" "}
           </span>
         </span>
-        <span className="flip-notice text-sm text-center pb-2 text-purple-400">
+        <span className="flip-notice pb-2 text-center text-sm text-purple-400">
           tap to flip
         </span>
       </div>
       {/* card back */}
-      <div className="card-back flex flex-row cols-2 text-stone-100 bg-gradient-to-b from-blue-600 to-teal-600 rounded-lg md:hover:-translate-y-1 md:duration-300">
+      <div
+        className="card-back cols-2 flex flex-row rounded-lg bg-gradient-to-b from-blue-600 to-teal-600 text-stone-100 md:duration-300 md:hover:-translate-y-1"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === "Enter" && flipCard()}
+        aria-label={`Setlist for ${data.artist} on ${data.date}`}
+      >
         <div className="flex-parent w-4/5">
-          <button className="flip-button flex w-full" onClick={flipCard}>
-            <div className="setlist-container h-full md:h-40 flex-grow text-left p-4 font-DMsans">
+          <button
+            className="flip-button flex w-full"
+            onClick={flipCard}
+            aria-label="Flip to front"
+          >
+            <div className="setlist-container h-full flex-grow p-4 text-left font-DMsans md:h-40">
               <span className="setlist-title font-bold sm:text-sm md:h-1/5 md:text-base">
                 Setlist
               </span>
@@ -61,7 +75,11 @@ const Card = ({ data, handleDelete }) => {
           </button>
         </div>
         <div className="del-button-container flex w-1/5">
-          <button className="delete-button p-6" onClick={handleDeleteClick}>
+          <button
+            className="delete-button p-6"
+            onClick={handleDeleteClick}
+            aria-label="Delete concert"
+          >
             <IoTrashBinOutline />
           </button>
         </div>

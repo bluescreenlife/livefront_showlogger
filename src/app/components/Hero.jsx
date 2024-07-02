@@ -8,17 +8,26 @@ const Hero = ({
   setDateInput,
 }) => {
   return (
-    <section className="hero flex-1 relative">
+    <section
+      className="hero relative flex-1"
+      role="banner"
+      aria-labelledby="hero-title"
+    >
       <div
-        className="hero-image absolute inset-0 -mb-10 bg-cover bg-center z-0"
+        className="hero-image absolute inset-0 z-0 -mb-10 bg-cover bg-center"
         style={{ backgroundImage: "url(/concert.jpg)" }}
+        aria-hidden="true"
       ></div>
-      <div className="gradient-overlay absolute inset-0 -mb-10 bg-gradient-to-b from-transparent to-neutral-900 z-0"></div>
-      <div className="hero-contents text-center text-neutral-100 pt-20 pb-4 relative z-10">
-        <h1 className="hero-title text-5xl md:text-6xl font-extrabold drop-shadow-2xl">
+      <img src="/concert.jpg" alt="Crowd at a concert" className="sr-only" />
+      <div className="gradient-overlay absolute inset-0 z-0 -mb-10 bg-gradient-to-b from-transparent to-neutral-900"></div>
+      <div className="hero-contents relative z-10 pb-4 pt-20 text-center text-neutral-100">
+        <h1
+          id="hero-title"
+          className="hero-title text-5xl font-extrabold drop-shadow-2xl md:text-6xl"
+        >
           ShowLogger
         </h1>
-        <div className="copy-text grid grid-cols-1 md:grid-cols-2 md:space-x-1 p-8 mx-4 drop-shadow-2xl">
+        <div className="copy-text mx-4 grid grid-cols-1 p-8 drop-shadow-2xl md:grid-cols-2 md:space-x-1">
           <span className="col-span-1 md:text-right">
             Concerts make great memories.
           </span>
