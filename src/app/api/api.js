@@ -22,7 +22,7 @@ async function getConcertData(artistName, eventDate) {
     // console.log(response.data);
     return response.data;
   } catch (error) {
-    // console.error(`Error fetching concert data: ${error}`);
+    console.error(`Error fetching concert data: ${error}`);
     alert("Show lookup failed. Please check input and try again.");
     return null;
   }
