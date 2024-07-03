@@ -18,7 +18,7 @@ This project is a front-end for a web application built with Next.js and React. 
 
 ## Installation
 
-To view the live demo, visit [ShowLogger.net](http://www.showlogger.net)
+To view a live demo, visit [ShowLogger.net](http://www.showlogger.net)
 
 To get a local development copy running:
 
@@ -42,11 +42,11 @@ To get a local development copy running:
 
 4. If you were provided an environment file (.env), place it at the app's root directory.
 
-Alternatively, create a .env file:
+   Alternatively, create a .env file:
 
-```bash
-touch .env
-```
+   ```bash
+   touch .env
+   ```
 
 and your own Setlist.FM API key (see .env.example file).
 
