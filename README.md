@@ -10,6 +10,7 @@ This project is a front-end for a web application built with Next.js and React. 
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Testing](#testing)
 - [Considerations](#considerations)
 - [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
@@ -56,6 +57,14 @@ After starting the development server, the app will be available at `http://loca
 2. Click the front of a concert card to flip to the back and view the setlist (scrollable on screens larger than mobile).
 3. Click the back of the card, outside of the delete icon, to return to the front.
 4. To delete a concert card, click the delete icon on the back.
+
+## Testing
+
+Jest tests are included. To run them, navigate to the project root directory and run:
+
+```bash
+npm test
+```
 
 ## Considerations
 
