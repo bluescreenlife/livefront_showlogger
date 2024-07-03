@@ -48,7 +48,7 @@ To get a local development copy running:
    touch .env
    ```
 
-and your own Setlist.FM API key (see .env.example file).
+   and your own Setlist.FM API key (see .env.example file).
 
 5. Run the development server:
 
