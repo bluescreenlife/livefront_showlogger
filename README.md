@@ -31,7 +31,7 @@ To get a local development copy running:
 2. Navigate to the project directory:
 
    ```bash
-   cd livefront-showlogger
+   cd livefront_showlogger
    ```
 
 3. Install dependencies:
