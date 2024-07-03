@@ -17,7 +17,7 @@ This project is a front-end for a web application built with Next.js and React. 
 
 ## Installation
 
-To view the live demo: [visit ShowLogger.net](http://www.showlogger.net)
+To view the live demo, visit [ShowLogger.net](http://www.showlogger.net)
 
 To get a local development copy running:
 
@@ -63,13 +63,14 @@ The following considerations were made during development:
 
 - **Client-side Rendering:** To utilize hooks across multiple components, the entire site is rendered on the client side. This decision was made for simplicity and ease of state management, though it has implications for performance and SEO.
 - **API requests routed through proxy server:** Due to CORS policy on the Setlist.fm API (only same-origin requests from client) from a development environment, a proxy server was used to route requests through a server component.
-- **Limited search input options:** To keep the first iteration of the app simple and bug-free, the user is required to enter the date they saw the artist. Since an artist typically only plays one show on any given date, this eliminates the need for filtering and selecting results. More than likely, the user won't remember a past date off-hand and will have to look it up. Ideally, the user would enter the concert city, location, year, or a combination of these instead of the date, and a list of possible concerts would render in a drop-down selection.
+- **Limited search input options:** To keep the first iteration of the app simple and bug-free, the user is required to enter the date they saw the artist. Since an artist typically only plays one show on any given date, this eliminates the need for filtering and selecting results. More than likely, the user won't remember a past date off-hand and will have to look it up. Ideally, the user would enter the concert city, location, year, or a combination of these instead of the date, and a list of possible concerts would render in a drop-down selection. The Setlist.FM API only allows one requests per second, thus timeout functionality will need to be implemented to wait for the user to pause typing before a request is made.
 
 ## Future Improvements
 
 The following is a list of improvements and feature additions for the future:
 
-- Add additional Jest tests for API functionality and cardObject generation.
+- Add additional Jest tests for API functionality via mock requests.
+- Add additional search functionality including city and venue as parameters, render a menu of matches, and allow user to select a concert match.
 - Improve card-flip animation on mobile: Currently, occasional artifacts are shown when flipping or scrolling concert cards (tested on Safari).
 - Add sort and filter capabilities for the card grid, to better interact with large collections of concert cards.
 - On desktop, if the user has scrollbars always-on in their device settings or is using Firefox with default settings, the look of the card back is distrupted by scroll bars on screens larger than mobile. A redesign with either the setlist right-aligned or displayed in a non-scrolling manner would be a notable visual improvement.
