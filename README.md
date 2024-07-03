@@ -40,13 +40,23 @@ To get a local development copy running:
    npm install
    ```
 
-4. Run the development server:
+4. If you were provided an environment file (.env), place it at the app's root directory.
+
+Alternatively, create a .env file:
+
+```bash
+touch .env
+```
+
+and your own Setlist.FM API key (see .env.example file).
+
+5. Run the development server:
 
    ```bash
    npm run dev
    ```
 
-5. View in browser:
+6. View in browser:
 
 After starting the development server, the app will be available at `http://localhost:3000`.
 
