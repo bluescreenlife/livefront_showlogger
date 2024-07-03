@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Grid from "./Grid";
+import Grid from "@/app/components/Grid";
 
 describe("Grid", () => {
   it("renders cards if present", () => {

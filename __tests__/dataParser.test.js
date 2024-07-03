@@ -1,4 +1,4 @@
-import parseData from "./dataParser";
+import parseData from "@/app/utils/dataParser";
 
 describe("dataParser", () => {
   it("returns a concertObject with all the necessary properties when passed JSON data replicating an API result", () => {

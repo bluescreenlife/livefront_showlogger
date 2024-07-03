@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Hero from "./Hero";
+import Hero from "@/app/components/Hero";
 
 describe("Hero", () => {
   it("renders the title and search component", () => {
