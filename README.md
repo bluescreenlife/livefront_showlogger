@@ -40,7 +40,7 @@ To get a local development copy running:
    npm install
    ```
 
-4. If you were provided an environment file (.env), place it at the app's root directory.
+4. If you were provided an environment file (.env) via Dropbox, place it at the app's root directory, and be sure to add the '.' prefix (Dropbox removes it).
 
    Alternatively, create a .env file:
 
