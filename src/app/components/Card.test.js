@@ -14,8 +14,9 @@ describe("Card", () => {
     render(<Card data={data} handleDelete={jest.fn()} />);
 
     expect(
-      screen.getByLabelText(`Concert details for Radiohead on 08/01/2008`),
+      screen.getByLabelText("Concert details for Radiohead on 08/01/2008"),
     ).toBeInTheDocument();
+    expect(screen.getByText("Grant Park, Chicago")).toBeInTheDocument();
   });
 
   it("flips the card when clicked", () => {
