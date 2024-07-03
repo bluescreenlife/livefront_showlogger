@@ -60,6 +60,8 @@ To get a local development copy running:
 
 After starting the development server, the app will be available at `http://localhost:3000`.
 
+- NOTE: A depreciation warning regarding the punycode module may appear upon starting the development server and running tests. As of now, there is no impact on this project. For more information read [here](https://github.com/salesforce/tough-cookie/issues/324).
+
 ## Usage
 
 1. To add a concert, enter an artist name and date (formatted as MM/DD/YYYY) in the search fields and click Add Show, or press return.
